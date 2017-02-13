@@ -1,6 +1,7 @@
 package pl.sw.project.tests;
 
-import org.testng.annotations.Test;
+
+import org.junit.Test;
 
 /**
  * Created by nishi on 2017-02-13.

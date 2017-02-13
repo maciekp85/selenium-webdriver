@@ -1,7 +1,7 @@
 package pl.sw.project.tests;
 
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import pl.sw.project.appmanager.ApplicationManager;
 
 /**
@@ -11,13 +11,13 @@ public class TestBase {
 
   protected static final ApplicationManager app = new ApplicationManager();
 
-  @BeforeSuite
-  public void setUp() {
+  @BeforeClass
+  public static void setUpClass() {
     app.init();
   }
 
-  @AfterSuite(alwaysRun = true)
-  public void tearDown() {
+  @AfterClass
+  public static void tearDownClass() {
     app.stop();
   }
 }
