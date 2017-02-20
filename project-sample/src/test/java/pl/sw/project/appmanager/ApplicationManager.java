@@ -12,11 +12,13 @@ public class ApplicationManager {
 
   private WebDriver wd;
   private NavigationHelper navigationHelper;
+  private SessionHelper sessionHelper;
 
   public void init() {
     wd = new ChromeDriver();
     wd.manage().timeouts().implicitlyWait( 0, TimeUnit.SECONDS );
     navigationHelper = new NavigationHelper(wd);
+    sessionHelper = new SessionHelper( wd );
   }
 
   public void stop() {
@@ -25,5 +27,9 @@ public class ApplicationManager {
 
   public NavigationHelper goTo() {
     return navigationHelper;
+  }
+
+  public SessionHelper session() {
+    return sessionHelper;
   }
 }

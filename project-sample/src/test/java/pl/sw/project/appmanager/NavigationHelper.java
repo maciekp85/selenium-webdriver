@@ -16,4 +16,8 @@ public class NavigationHelper {
   public void googlePage() {
     wd.get( "https://www.google.pl/" );
   }
+
+  public void loginPage() {
+    wd.get("http://localhost/litecart/admin/login.php");
+  }
 }
