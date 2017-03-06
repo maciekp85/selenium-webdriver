@@ -24,6 +24,7 @@ public class ApplicationManager {
   private NavigationHelper navigationHelper;
   private SessionHelper sessionHelper;
   private WebDriverWait wait;
+  private MenuHelper menuHelper;
 
   public void init() {
 
@@ -65,6 +66,7 @@ public class ApplicationManager {
     // CREATE HELPERS OBJECTS
     navigationHelper = new NavigationHelper(wd);
     sessionHelper = new SessionHelper( wd );
+    menuHelper = new MenuHelper( wd );
   }
 
   public void stop() {
@@ -78,5 +80,9 @@ public class ApplicationManager {
 
   public SessionHelper session() {
     return sessionHelper;
+  }
+
+  public MenuHelper menu() {
+    return menuHelper;
   }
 }
