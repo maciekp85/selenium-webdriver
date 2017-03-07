@@ -20,4 +20,8 @@ public class NavigationHelper {
   public void loginPage() {
     wd.get("http://localhost/litecart/admin/login.php");
   }
+
+  public void mainPage() {
+    wd.get( "http://localhost/litecart/en/" );
+  }
 }
