@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.MarionetteDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pl.sw.project.tests.GeoZonesTest;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -26,6 +27,8 @@ public class ApplicationManager {
   private WebDriverWait wait;
   private MenuHelper menuHelper;
   private ArticleHelper articleHelper;
+  private CountriesHelper countriesHelper;
+  public GeoZonesHelper geoZonesHelper;
 
   public void init() {
 
@@ -69,6 +72,8 @@ public class ApplicationManager {
     sessionHelper = new SessionHelper( wd );
     menuHelper = new MenuHelper( wd );
     articleHelper = new ArticleHelper( wd );
+    countriesHelper = new CountriesHelper( wd );
+    geoZonesHelper = new GeoZonesHelper( wd );
   }
 
   public void stop() {
@@ -90,5 +95,13 @@ public class ApplicationManager {
 
   public ArticleHelper article() {
     return articleHelper;
+  }
+
+  public CountriesHelper countries() {
+    return countriesHelper;
+  }
+
+  public GeoZonesHelper geo() {
+    return geoZonesHelper;
   }
 }

@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 /**
  * Created by nishi on 2017-03-06.
  */
@@ -38,6 +40,16 @@ public class MenuHelper extends HelperBase {
         } else {
           Assert.assertEquals( textFromSubmenu, h1Text );
         }
+      }
+    }
+  }
+
+  public void moveTo(String elementMenu) {
+    List<WebElement> elements = wd.findElements( By.cssSelector( "ul#box-apps-menu li" ) );
+    for (int i = 0; i < elements.size(); i++) {
+      if (elements.get( i ).getText().equals( elementMenu )) {
+        elements.get( i ).click();
+        break;
       }
     }
   }
