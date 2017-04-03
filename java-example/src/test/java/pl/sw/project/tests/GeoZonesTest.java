@@ -11,7 +11,7 @@ public class GeoZonesTest extends TestBase {
   @Test
   public void testCountries() {
     app.goTo().loginPage();
-    app.session().login( "admin", "admin" );
+    app.session().loginAsAdmin( "admin", "admin" );
     app.menu().moveTo("Geo Zones");
     boolean sorted = app.geo().checkIfZonesAreSortedInAlphabeticalOrder();
     Assert.assertTrue( sorted );

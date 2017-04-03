@@ -10,6 +10,6 @@ public class LoginTest extends TestBase {
   @Test
   public void testLogin() {
     app.goTo().loginPage();
-    app.session().login("admin", "admin");
+    app.session().loginAsAdmin("admin", "admin");
   }
 }

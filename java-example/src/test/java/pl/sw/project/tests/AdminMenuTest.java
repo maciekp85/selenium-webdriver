@@ -10,7 +10,7 @@ public class AdminMenuTest extends TestBase {
   @Test
   public void testAdminMenu() {
     app.goTo().loginPage();
-    app.session().login( "admin", "admin" );
+    app.session().loginAsAdmin( "admin", "admin" );
     app.menu().walkThroughTheAllElements();
   }
 }

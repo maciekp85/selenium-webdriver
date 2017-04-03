@@ -29,6 +29,8 @@ public class ApplicationManager {
   private ArticleHelper articleHelper;
   private CountriesHelper countriesHelper;
   public GeoZonesHelper geoZonesHelper;
+  private SettingsHelper settingsHelper;
+  private RegistrationHelper registrationHelper;
 
   public void init() {
 
@@ -74,6 +76,8 @@ public class ApplicationManager {
     articleHelper = new ArticleHelper( wd );
     countriesHelper = new CountriesHelper( wd );
     geoZonesHelper = new GeoZonesHelper( wd );
+    settingsHelper = new SettingsHelper( wd );
+    registrationHelper = new RegistrationHelper( wd);
   }
 
   public void stop() {
@@ -103,5 +107,13 @@ public class ApplicationManager {
 
   public GeoZonesHelper geo() {
     return geoZonesHelper;
+  }
+
+  public SettingsHelper settings() {
+    return settingsHelper;
+  }
+
+  public RegistrationHelper registration() {
+    return registrationHelper;
   }
 }

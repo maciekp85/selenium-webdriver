@@ -13,7 +13,7 @@ public class CountriesTest extends TestBase {
   @Test
   public void testCountries() {
     app.goTo().loginPage();
-    app.session().login( "admin", "admin" );
+    app.session().loginAsAdmin( "admin", "admin" );
     app.menu().moveTo("Countries");
     List<String> countries = app.countries().list();
     List<String> sortedCountries = app.countries().sort(countries);
